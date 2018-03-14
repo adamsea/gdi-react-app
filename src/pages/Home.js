@@ -5,10 +5,13 @@ export default class Home extends Component {
 
     render() {
         return <Row>
-            <Col md={ 12 }>
-                <h1>Time to Add Components!</h1>
+            <Col md={ 9 }>
+                <h3>Recently Added Images</h3>
             </Col>
-        </Row>
+            <Col md={ 3 }>
+                <h3>What would you like to do?</h3>
+            </Col>
+        </Row>;
     }
 
 }
