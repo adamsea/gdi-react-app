@@ -8,7 +8,7 @@ import {
 
 export default class Navigation extends Component {
     render () {
-        return <Navbar inverse collapseOnSelect>
+        return <Navbar collapseOnSelect fluid staticTop>
             <Navbar.Header>
                 <Navbar.Brand>
                     <a href="/">React Memes</a>
