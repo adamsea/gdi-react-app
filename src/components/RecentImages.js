@@ -12,7 +12,7 @@ export default class RecentImages extends Component {
         return <Row>
             {
                 this.props.images.map((image, index) => {
-                    return <Col key={ index } xs={ 6 } md={ 4 }>
+                    return <Col key={ image.id } xs={ 6 } md={ 4 }>
                         <Thumbnail
                             href="#"
                             alt={ image.title }

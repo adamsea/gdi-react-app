@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
+
 import RecentImages from '../components/RecentImages';
 import ImageOptions from '../components/ImageOptions';
 
@@ -13,14 +14,14 @@ export default class Home extends Component {
 
     render () {
         let images = [
-            { title: 'Image 1', src: 'http://via.placeholder.com/300x200' },
-            { title: 'Image 2', src: 'http://via.placeholder.com/300x200' },
-            { title: 'Image 3', src: 'http://via.placeholder.com/300x200' },
-            { title: 'Image 4', src: 'http://via.placeholder.com/300x200' },
-            { title: 'Image 5', src: 'http://via.placeholder.com/300x200' },
-            { title: 'Image 6', src: 'http://via.placeholder.com/300x200' },
-            { title: 'Image 7', src: 'http://via.placeholder.com/300x200' },
-            { title: 'Image 8', src: 'http://via.placeholder.com/300x200' },
+            { id: 1, title: 'Image 1', src: 'http://via.placeholder.com/300x200' },
+            { id: 2, title: 'Image 2', src: 'http://via.placeholder.com/300x200' },
+            { id: 3, title: 'Image 3', src: 'http://via.placeholder.com/300x200' },
+            { id: 4, title: 'Image 4', src: 'http://via.placeholder.com/300x200' },
+            { id: 5, title: 'Image 5', src: 'http://via.placeholder.com/300x200' },
+            { id: 6, title: 'Image 6', src: 'http://via.placeholder.com/300x200' },
+            { id: 7, title: 'Image 7', src: 'http://via.placeholder.com/300x200' },
+            { id: 8, title: 'Image 8', src: 'http://via.placeholder.com/300x200' },
         ];
         return <Row>
             <Col md={ 9 }>
