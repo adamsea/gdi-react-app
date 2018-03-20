@@ -5,10 +5,13 @@ export default class Images extends Component {
 
     render() {
         return <Row>
-            <Col md={ 12 }>
-                <h1>Time to See Some Photos!</h1>
+            <Col md={ 9 }>
+                <h3>Recently Uploaded</h3>
             </Col>
-        </Row>
+            <Col md={ 3 }>
+                <h3>Create Meme</h3>
+            </Col>
+        </Row>;
     }
 
 }
