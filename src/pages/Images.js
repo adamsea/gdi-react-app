@@ -5,8 +5,8 @@ import axios from 'axios';
 import RecentImages from '../components/RecentImages';
 import MemeCreator from '../components/MemeCreator';
 
-const IMAGES_API = 'https://cmlucc2j0i.execute-api.us-east-1.amazonaws.com/dev/images';
-const MEMES_API = 'https://cmlucc2j0i.execute-api.us-east-1.amazonaws.com/dev/memes';
+const IMAGES_API = 'https://kpm2qrhrf8.execute-api.us-east-1.amazonaws.com/dev/images';
+const MEMES_API = 'https://kpm2qrhrf8.execute-api.us-east-1.amazonaws.com/dev/memes';
 
 export default class Images extends Component {
 
