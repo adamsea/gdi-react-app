@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
+import axios from 'axios';
 
 import RecentImages from '../components/RecentImages';
 import ImageOptions from '../components/ImageOptions';
+
+const MEMES_API = 'https://cmlucc2j0i.execute-api.us-east-1.amazonaws.com/dev/memes';
 
 export default class Home extends Component {
 

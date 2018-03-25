@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Row,
-    Col,
-    FormGroup,
-    FormControl,
-    HelpBlock
-} from 'react-bootstrap';
-
-import MemeCreator from '../components/MemeCreator';
+import { Row, Col } from 'react-bootstrap';
 
 export default class Upload extends Component {
 
@@ -16,17 +8,7 @@ export default class Upload extends Component {
             <Col md={ 12 }>
                 <h1>Upload a Photo</h1>
             </Col>
-            <Col md={ 12 }>
-                <FormGroup>
-                    <FormControl
-                        type="file"
-                        name="image"
-                        onChange={() => false}
-                    />
-                    <HelpBlock>Click to upload a new image</HelpBlock>
-                </FormGroup>
-            </Col>
-        </Row>;
+        </Row>
     }
 
 }

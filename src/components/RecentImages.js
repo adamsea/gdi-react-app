@@ -6,10 +6,12 @@ import {
     Thumbnail
 } from 'react-bootstrap';
 
+import './RecentImages.css';
+
 export default class RecentImages extends Component {
 
     render () {
-        return <Row>
+        return <Row className="recent-images">
             {
                 this.props.images.map((image, index) => {
                     return <Col key={ image.id } xs={ 6 } md={ 4 }>

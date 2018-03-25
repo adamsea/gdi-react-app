@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
+import axios from 'axios';
 
 import RecentImages from '../components/RecentImages';
 import MemeCreator from '../components/MemeCreator';
+
+const IMAGES_API = 'https://cmlucc2j0i.execute-api.us-east-1.amazonaws.com/dev/images';
+const MEMES_API = 'https://cmlucc2j0i.execute-api.us-east-1.amazonaws.com/dev/memes';
 
 export default class Images extends Component {
 
