@@ -27,6 +27,7 @@ export default class MemeCreator extends Component {
         let form = ev.target;
         return this.props.onCreateMeme({
             id: this.props.selected_image.id,
+            src: this.props.selected_image.src,
             top_text: form.top_text.value.trim(),
             bottom_text: form.bottom_text.value.trim()
         });
