@@ -13,13 +13,18 @@ import MemeCreator from '../components/MemeCreator';
 
 import './Upload.css';
 
-const IMAGES_API = 'https://kpm2qrhrf8.execute-api.us-east-1.amazonaws.com/dev/images';
-const MEMES_API = 'https://kpm2qrhrf8.execute-api.us-east-1.amazonaws.com/dev/memes';
+import { IMAGES_API } from '../constants';
+import API from '../actions/api';
 
 export default class Upload extends Component {
 
-    state = {
-        uploaded_image: null
+    constructor (props) {
+        super(props);
+        this.state = {
+            uploaded_image: null
+        };
+        this.uploadImage = this.uploadImage.bind(this);
+        this.createMeme = this.createMeme.bind(this);
     }
 
     getBase64 (file, cb) {
@@ -49,11 +54,7 @@ export default class Upload extends Component {
     }
 
     createMeme (textFields) {
-        axios.post(MEMES_API, textFields, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
+        API.createMeme(textFields)
             .then((result) => {
                 let data = result.data;
                 let title = data.title;
@@ -64,6 +65,8 @@ export default class Upload extends Component {
     }
 
     render() {
+        let uploaded = this.state.uploaded_image;
+
         return <Row>
             <Col md={ 12 }>
                 <h1>Upload a Photo</h1>
@@ -73,22 +76,22 @@ export default class Upload extends Component {
                     <FormControl
                         type="file"
                         name="image"
-                        onChange={ this.uploadImage.bind(this) }
+                        onChange={ this.uploadImage }
                     />
                     <HelpBlock>Click to upload a new image</HelpBlock>
                 </FormGroup>
             </Col>
             {
-                this.state.uploaded_image ?
+                uploaded ?
                     <Col md={ 9 }>
                         <Row>
                             <Col className="uploaded-image" md={ 7 }>
-                                <Image src={ this.state.uploaded_image.src } responsive />
+                                <Image src={ uploaded.src } responsive />
                             </Col>
                             <Col className="meme-creator" md={ 4 }>
                                 <MemeCreator
-                                    selected_image={ this.state.uploaded_image }
-                                    onCreateMeme={ this.createMeme.bind(this) }
+                                    selected_image={ uploaded }
+                                    onCreateMeme={ this.createMeme }
                                 />
                             </Col>
                         </Row>

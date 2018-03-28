@@ -5,13 +5,17 @@ import axios from 'axios';
 import RecentImages from '../components/RecentImages';
 import ImageOptions from '../components/ImageOptions';
 
-const MEMES_API = 'https://kpm2qrhrf8.execute-api.us-east-1.amazonaws.com/dev/memes';
+import { MEMES_API } from '../constants';
 
 export default class Home extends Component {
 
-    state = {
-        images: [],
-        selected_image: null
+    constructor (props) {
+        super(props);
+        this.state = {
+            images: [],
+            selected_image: null
+        }
+        this.selectImage = this.selectImage.bind(this);
     }
 
     selectImage (image) {
@@ -29,17 +33,19 @@ export default class Home extends Component {
 
     render () {
         let images = this.state.images;
+        let selected = this.state.selected_image;
+
         return <Row>
             <Col md={ 9 }>
                 <h3>Recently Created</h3>
                 <RecentImages
                     images={ images }
-                    onSelect={ this.selectImage.bind(this) }
+                    onSelect={ this.selectImage }
                 />
             </Col>
             <Col md={ 3 }>
                 <h3>What would you like to do?</h3>
-                <ImageOptions selected_image={ this.state.selected_image } />
+                <ImageOptions selected_image={ selected } />
             </Col>
         </Row>;
     }
